@@ -1,0 +1,33 @@
+.item {
+  width: 43px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 12px;
+  gap: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: width 0.3s ease;
+  font-size: var(--font-sm);
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.active {
+  background-color: var(--color-bg-nav-active);
+}
+
+.open {
+  width: 240px;
+}
+
+.text {
+  color: var(--color-black);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.item:hover {
+  background-color: var(--color-bg-primary);
+}

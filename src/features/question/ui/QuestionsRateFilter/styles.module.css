@@ -1,0 +1,11 @@
+.rateSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rate {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}

@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  line-height: 1.4;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--color-bg-primary);
+  width: 100vw;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.no-pointer {
+  pointer-events: none;
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  color: var(--color-black);
+  font-size: var(--font-sm);
+}
+
+.container {
+  flex: 1;
+  overflow-y: auto;
+}
+
+code, code * {
+  font-size: var(--font-xs);
+  font-family: "Fira Mono";
+}
+
+:not(pre) > code {
+  color: rgb(38, 169, 95);
+  background-color: rgb(240, 240, 240);
+  border-radius: 10%;
+  padding: 2px 4px;
+}
+
+pre code {
+  line-height: 1.4em;
+  border-radius: 10px;
+  margin: 10px 0px;
+  font-size: var(--font-xs);
+  font-family: "Fira Mono";
+}

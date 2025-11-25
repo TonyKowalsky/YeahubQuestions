@@ -1,0 +1,18 @@
+:root {
+    --color-bg-primary: #f4f4f4;
+    --color-bg-secondary: #fff;
+    --color-border: #d1d1d1;
+    --color-skill-border: #bababa;
+    --color-black: #191919;
+    --color-purple: #6a0bff;
+    --color-bg-nav: #f8f8f8;
+    --color-bg-nav-active: #f0e7ff;
+    --color-bg-member: #ffc234;
+    --font-xs: 14px;
+    --font-sm: 16px;
+    --font-md: 20px;
+    --font-lg: 24px;
+    --font-weight-light: 400;
+    --font-weight-med: 500;
+    --font-weight-semibold: 600;
+}

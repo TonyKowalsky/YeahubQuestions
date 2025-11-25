@@ -1,0 +1,17 @@
+.answer p {
+  color: var(--color-black);
+  font-size: var(--font-sm);
+  line-height: 1.6em;
+}
+
+.answer {
+  overflow-x: auto;
+}
+
+.answer pre,
+.answer code {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap; /* или pre-scrollable */
+  /* word-wrap: break-word; */
+}

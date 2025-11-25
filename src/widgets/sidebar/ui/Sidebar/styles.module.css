@@ -1,0 +1,89 @@
+.sidebar {
+  position: relative;
+  width: 88px;
+  min-width: 88px;
+  min-height: 100vh;
+  background-color: var(--color-bg-secondary);
+  transition: 0.3s ease;
+}
+
+.open {
+  min-width: 280px;
+}
+
+.header {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid var(--color-border);
+  padding-left: 20px;
+}
+
+.sidebarArrow {
+  position: absolute;
+  right: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 30%;
+  border: none;
+  background-color: var(--color-bg-secondary);
+}
+
+.open .sidebarArrow {
+  right: -10px;
+}
+
+.logoButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.yeahub {
+  display: none;
+}
+
+.open .yeahub {
+  display: block;
+}
+
+.support {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 20px 20px;
+  gap: 5px;
+  height: 100%;
+}
+
+@media (max-width: 1025px) {
+  .sidebar {
+    display: none;
+  }
+  .sidebarArrow {
+    display: none;
+  }
+
+  .sidebar.open {
+    display: block;
+    position: fixed;
+    width: 360px;
+    height: 100vh;
+    min-height: 100vh;
+    background-color: var(--color-bg-secondary);
+    z-index: 1000;
+    box-shadow: rgba(106, 99, 118, 0.1) 0px 4px 10px 0px;
+  }
+}
+
+@media (max-height: 500px) {
+  .support {
+    display: none;
+  }
+}

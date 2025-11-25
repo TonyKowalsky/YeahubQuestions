@@ -1,0 +1,27 @@
+.button {
+  width: 43px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 12px;
+  gap: 10px;
+  border-radius: 10px;
+  font-size: var(--font-sm);
+  color: white;
+  background-color: var(--color-purple);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.open {
+  width: 240px;
+}
+
+.text {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.text.hidden {
+  display: none;
+}

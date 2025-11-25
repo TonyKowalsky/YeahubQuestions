@@ -1,0 +1,10 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 360px;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: var(--color-bg-secondary);
+  overflow-x: hidden;
+}

@@ -1,0 +1,29 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.wrapper button {
+    font-size: var(--font-xs);
+}
+
+.wrapper button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.active {
+    color: white;
+    background-color: var(--color-purple);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
