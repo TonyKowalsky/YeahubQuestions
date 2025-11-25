@@ -4,9 +4,9 @@ import type {
   QuestionsRequest,
   QuestionsResponse,
 } from "@/entities/question/model";
-import { API_CONFIG } from "@/shared/config";
+// import { API_CONFIG } from "@/shared/config";
 
-const { baseUrl } = API_CONFIG;
+// const { baseUrl } = API_CONFIG;
 
 const questionsApi = createApi({
   reducerPath: "questionsApi",

@@ -1,8 +1,8 @@
-import { API_CONFIG } from "@/shared/config";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import type { SkillsRequest, SkillsResponse } from "@/entities/skill";
+// import { API_CONFIG } from "@/shared/config";
 
-const { baseUrl } = API_CONFIG;
+// const { baseUrl } = API_CONFIG;
 
 const skillsApi = createApi({
   reducerPath: "skillsApi",
