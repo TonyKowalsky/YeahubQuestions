@@ -1,7 +1,8 @@
 {
   "rewrites": [
-    { "source": "/api/questions", "destination": "/api/questions.ts" },
-    { "source": "/api/skills", "destination": "/api/skills.ts" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/api/:match*",
+      "destination": "https://api.yeatwork.ru/:match*"
+    }
   ]
 }
