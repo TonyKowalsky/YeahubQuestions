@@ -11,7 +11,7 @@ import type {
 const questionsApi = createApi({
   reducerPath: "questionsApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: '/api/',
+    baseUrl: "/api/",
     prepareHeaders: headers => {
       headers.set("Accept", "application/json");
     },
