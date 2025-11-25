@@ -73,7 +73,7 @@
   .sidebar.open {
     display: block;
     position: fixed;
-    width: 360px;
+    width: 280px;
     height: 100vh;
     min-height: 100vh;
     background-color: var(--color-bg-secondary);
