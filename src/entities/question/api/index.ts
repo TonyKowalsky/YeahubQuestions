@@ -20,13 +20,13 @@ const questionsApi = createApi({
   endpoints: builder => ({
     getQuestions: builder.query<QuestionsResponse, QuestionsRequest>({
       query: params => ({
-        url: "questions",
+        url: "questions/public-questions",
         params,
       }),
     }),
     getQuestionById: builder.query<Question, number>({
       query: id => ({
-        url: `questions`,
+        url: `questions/public-questions`,
         params: { id },
       }),
     }),
