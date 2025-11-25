@@ -11,7 +11,7 @@ const { baseUrl } = API_CONFIG;
 const questionsApi = createApi({
   reducerPath: "questionsApi",
   baseQuery: fetchBaseQuery({
-    baseUrl,
+    baseUrl: '/api/',
     prepareHeaders: headers => {
       headers.set("Accept", "application/json");
     },
@@ -20,13 +20,14 @@ const questionsApi = createApi({
   endpoints: builder => ({
     getQuestions: builder.query<QuestionsResponse, QuestionsRequest>({
       query: params => ({
-        url: "questions/public-questions",
+        url: "questions",
         params,
       }),
     }),
     getQuestionById: builder.query<Question, number>({
       query: id => ({
-        url: `questions/public-questions/${id}`,
+        url: `questions`,
+        params: { id },
       }),
     }),
   }),

@@ -7,7 +7,7 @@ const { baseUrl } = API_CONFIG;
 const skillsApi = createApi({
   reducerPath: "skillsApi",
   baseQuery: fetchBaseQuery({
-    baseUrl,
+    baseUrl: '/api/',
     prepareHeaders: headers => {
       headers.set("Accept", "application/json");
     },
