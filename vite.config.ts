@@ -14,7 +14,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
-        target: "https://api.yeatwork.ru",
+        target: "https://api.yeatwork.ru/",
         changeOrigin: true,
         rewrite: path => path.replace(/^\/api/, ""),
         secure: true,
