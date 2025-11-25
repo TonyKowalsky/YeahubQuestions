@@ -26,8 +26,7 @@ const questionsApi = createApi({
     }),
     getQuestionById: builder.query<Question, number>({
       query: id => ({
-        url: `questions/public-questions`,
-        params: { id },
+        url: `questions/public-questions/${id}`,
       }),
     }),
   }),
