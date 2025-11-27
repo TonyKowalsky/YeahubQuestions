@@ -1,13 +1,13 @@
 import styles from "./styles.module.css";
 import burgerIcon from "./burger.png";
 import { logoIconRounded } from "@/shared/assets";
-import { useCallback, useRef } from "react";
+import { memo, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserPopover, UserButton, user } from "@/entities/user";
 import { useClickOutside, useToggle } from "@/shared/lib";
 import { useSidebar } from "@/shared/model";
 
-const Header = () => {
+const Header = memo(() => {
   const [isOpenPopover, toggle, , close] = useToggle(false);
   const { toggleSidebar } = useSidebar();
   const navigate = useNavigate();
@@ -38,6 +38,6 @@ const Header = () => {
       </button>
     </header>
   );
-};
+});
 
 export default Header;

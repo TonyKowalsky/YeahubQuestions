@@ -2,15 +2,15 @@ import styles from "./styles.module.css";
 import type { UserProfile } from "@/entities/user/model";
 import { profileLargeIcon } from "@/shared/assets";
 import sealCheckIcon from "./seal-check.png";
-import { forwardRef, memo } from "react";
+import { forwardRef } from "react";
 
 interface UserButtonProps {
   user: UserProfile;
   onClick: () => void;
 }
 
-const UserButton = memo(
-  forwardRef<HTMLButtonElement, UserButtonProps>(({ user, onClick }, ref) => {
+const UserButton = forwardRef<HTMLButtonElement, UserButtonProps>(
+  ({ user, onClick }, ref) => {
     return (
       <button
         ref={ref}
@@ -27,7 +27,6 @@ const UserButton = memo(
         />
       </button>
     );
-  })
+  }
 );
-
 export default UserButton;

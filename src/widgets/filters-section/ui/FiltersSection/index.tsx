@@ -2,11 +2,12 @@ import { QuestionsFilter, QuestionsSearchBar } from "@/features/question";
 import styles from "./styles.module.css";
 import { SkillsAPI } from "@/entities/skill";
 import { ErrorMessage, Skeleton } from "@/shared/ui";
+import { memo } from "react";
 
 const DISPLAYED_SKILLS_COUNT = 44;
 const { useGetSkillsQuery } = SkillsAPI;
 
-const FiltersSection = () => {
+const FiltersSection = memo(() => {
   const {
     data: skillsResponse,
     isLoading,
@@ -27,6 +28,6 @@ const FiltersSection = () => {
       )}
     </div>
   );
-};
+});
 
 export default FiltersSection;

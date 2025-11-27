@@ -1,10 +1,10 @@
 import { searchIcon } from "@/shared/assets";
 import styles from "./styles.module.css";
-import { memo, useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDebounce, useQueryParams } from "@/shared/lib";
 import type { QuestionsRequest } from "@/entities/question";
 
-const QuestionsSearchBar = memo(() => {
+const QuestionsSearchBar = () => {
   const { params, updateParams } = useQueryParams<QuestionsRequest>();
   const [search, setSearch] = useState(params.title || "");
   const debouncedSearch = useDebounce(search, 500);
@@ -38,6 +38,6 @@ const QuestionsSearchBar = memo(() => {
       />
     </div>
   );
-});
+};
 
 export default QuestionsSearchBar;

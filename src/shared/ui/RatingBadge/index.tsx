@@ -1,4 +1,3 @@
-import { memo } from "react";
 import styles from "./styles.module.css";
 
 interface RatingBadgeProps {
@@ -6,13 +5,13 @@ interface RatingBadgeProps {
   label: string;
 }
 
-const RatingBadge = memo(({ rating, label }: RatingBadgeProps) => {
+const RatingBadge = ({ rating, label }: RatingBadgeProps) => {
   return (
     <div className={styles.tab}>
       <p>{label}:</p>
       <p className={styles.value}>{rating}</p>
     </div>
   );
-});
+};
 
 export default RatingBadge;

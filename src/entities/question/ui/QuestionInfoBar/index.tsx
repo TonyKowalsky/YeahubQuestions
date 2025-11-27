@@ -1,5 +1,5 @@
 import styles from "./styles.module.css";
-import { memo, useRef } from "react";
+import { useRef } from "react";
 import { useClickOutside, useToggle } from "@/shared/lib";
 import type { Question } from "@/entities/question/model";
 import { QuestionPopover } from "@/entities/question/ui";
@@ -9,7 +9,7 @@ interface QuestionInfoBarProps {
   question: Question;
 }
 
-const QuestionInfoBar = memo(({ question }: QuestionInfoBarProps) => {
+const QuestionInfoBar = ({ question }: QuestionInfoBarProps) => {
   const [isOpenPopover, togglePopover, , closePopover] = useToggle(false);
   const popoverRef = useRef<HTMLDivElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -41,6 +41,6 @@ const QuestionInfoBar = memo(({ question }: QuestionInfoBarProps) => {
       </div>
     </div>
   );
-});
+};
 
 export default QuestionInfoBar;

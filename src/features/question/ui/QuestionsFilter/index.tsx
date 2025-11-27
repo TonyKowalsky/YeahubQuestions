@@ -8,13 +8,12 @@ import {
   QuestionsSkillsFilter,
 } from "@/features/question/ui";
 import { useFilterHandlers } from "@/features/question/lib";
-import { memo } from "react";
 
 interface QuestionFilterProps {
   skills: Skill[];
 }
 
-const QuestionsFilter = memo(({ skills }: QuestionFilterProps) => {
+const QuestionsFilter = ({ skills }: QuestionFilterProps) => {
   const { params, updateParams } = useQueryParams<QuestionsRequest>();
   const { isActive, handleClick } = useFilterHandlers(params, updateParams);
 
@@ -32,6 +31,6 @@ const QuestionsFilter = memo(({ skills }: QuestionFilterProps) => {
       <QuestionsRateFilter isActive={isActive} handleClick={handleClick} />
     </div>
   );
-});
+};
 
 export default QuestionsFilter;

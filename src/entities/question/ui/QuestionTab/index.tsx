@@ -1,6 +1,5 @@
 import styles from "./styles.module.css";
 import type { Question } from "@/entities/question/model";
-import { memo } from "react";
 import { arrowDownIcon } from "@/shared/assets";
 import { cn } from "@/shared/utils";
 import { QuestionAnswer, QuestionInfoBar } from "@/entities/question/ui/";
@@ -10,7 +9,7 @@ interface QuestionTabProps {
   question: Question;
 }
 
-const QuestionTab = memo(({ question }: QuestionTabProps) => {
+const QuestionTab = ({ question }: QuestionTabProps) => {
   const [isExpanded, toggleExpanded] = useToggle(false);
 
   return (
@@ -31,6 +30,6 @@ const QuestionTab = memo(({ question }: QuestionTabProps) => {
       </div>
     </div>
   );
-});
+};
 
 export default QuestionTab;

@@ -1,7 +1,6 @@
 import { arrowLeftIcon, arrowRightIcon } from "@/shared/assets";
 import styles from "./styles.module.css";
 import { cn } from "@/shared/utils";
-import { memo } from "react";
 
 interface PaginationProps {
   onPrevPageClick: () => void;
@@ -11,7 +10,7 @@ interface PaginationProps {
   totalPages: number;
 }
 
-const Pagination = memo(({
+const Pagination = ({
   onPrevPageClick,
   onNextPageClick,
   onChangePage,
@@ -101,6 +100,6 @@ const Pagination = memo(({
       </button>
     </div>
   );
-});
+};
 
 export default Pagination;

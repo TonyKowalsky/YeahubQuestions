@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
-import { memo } from "react";
 
 interface RedirectLinkProps {
   link: string;
 }
 
-const RedirectLink = memo(({ link }: RedirectLinkProps) => {
+const RedirectLink = ({ link }: RedirectLinkProps) => {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate(link);
@@ -19,6 +18,6 @@ const RedirectLink = memo(({ link }: RedirectLinkProps) => {
       </button>
     </p>
   );
-});
+};
 
 export default RedirectLink;

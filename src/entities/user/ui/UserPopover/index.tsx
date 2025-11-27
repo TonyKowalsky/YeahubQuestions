@@ -5,14 +5,14 @@ import { profileLargeIcon } from "@/shared/assets";
 import sealCheckWhiteIcon from "./seal-check-white.png";
 import logoutIcon from "./logout.png";
 import { cn } from "@/shared/utils";
-import { forwardRef, memo, useCallback } from "react";
+import { forwardRef, useCallback } from "react";
 
 interface UserPopoverProps {
   user: UserProfile;
 }
 
-const UserPopover = memo(
-  forwardRef<HTMLDivElement, UserPopoverProps>(({ user }, ref) => {
+const UserPopover = forwardRef<HTMLDivElement, UserPopoverProps>(
+  ({ user }, ref) => {
     const navigate = useNavigate();
     const handleProfileClick = useCallback(
       (id: string) => {
@@ -80,7 +80,6 @@ const UserPopover = memo(
         )}
       </div>
     );
-  })
+  }
 );
-
 export default UserPopover;

@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 import { useNavigate } from "react-router-dom";
-import { forwardRef, memo, useCallback } from "react";
+import { forwardRef, useCallback } from "react";
 import {
   detailsIcon,
   favoriteIcon,
@@ -14,7 +14,7 @@ interface QuestionPopoverProps {
   question: Question;
 }
 
-const QuestionPopover = memo(forwardRef<HTMLDivElement, QuestionPopoverProps>(
+const QuestionPopover = forwardRef<HTMLDivElement, QuestionPopoverProps>(
   ({ question }, ref) => {
     const navigate = useNavigate();
     const handleNavigate = useCallback(
@@ -58,6 +58,6 @@ const QuestionPopover = memo(forwardRef<HTMLDivElement, QuestionPopoverProps>(
       </div>
     );
   }
-));
+);
 
 export default QuestionPopover;

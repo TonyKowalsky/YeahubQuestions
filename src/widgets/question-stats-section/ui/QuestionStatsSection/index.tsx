@@ -2,13 +2,13 @@ import styles from "./styles.module.css";
 import type { Question } from "@/entities/question";
 import { FilterChip, RatingBadge } from "@/shared/ui";
 import { useNavigate } from "react-router-dom";
-import { useCallback } from "react";
+import { memo, useCallback } from "react";
 
 interface QuestionStatsSectionProps {
   question: Question;
 }
 
-const QuestionStatsSection = ({ question }: QuestionStatsSectionProps) => {
+const QuestionStatsSection = memo(({ question }: QuestionStatsSectionProps) => {
   const navigate = useNavigate();
   const handleClick = useCallback(
     (skillId: number) => {
@@ -50,6 +50,6 @@ const QuestionStatsSection = ({ question }: QuestionStatsSectionProps) => {
       </div>
     </div>
   );
-};
+});
 
 export default QuestionStatsSection;
