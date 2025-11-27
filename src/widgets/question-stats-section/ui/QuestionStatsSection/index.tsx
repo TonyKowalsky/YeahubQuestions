@@ -1,7 +1,6 @@
 import styles from "./styles.module.css";
-import { SkillTab } from "@/entities/skill";
 import type { Question } from "@/entities/question";
-import { RatingBadge } from "@/shared/ui";
+import { FilterChip, RatingBadge } from "@/shared/ui";
 import { useNavigate } from "react-router-dom";
 import { useCallback } from "react";
 
@@ -30,9 +29,10 @@ const QuestionStatsSection = ({ question }: QuestionStatsSectionProps) => {
         <span>Навыки:</span>
         <div className={styles.skillsList}>
           {question.questionSkills.map(skill => (
-            <SkillTab
+            <FilterChip
               key={skill.id}
-              skill={skill}
+              label={skill.title}
+              image={skill.title}
               onClick={() => handleClick(skill.id)}
             />
           ))}

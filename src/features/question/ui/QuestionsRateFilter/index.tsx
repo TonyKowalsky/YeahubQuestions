@@ -1,6 +1,7 @@
-import { rates, RateTab, type Rate } from "@/entities/question";
+import { rates, type Rate } from "@/entities/question";
 import styles from "./styles.module.css";
 import { memo } from "react";
+import { FilterChip } from "@/shared/ui";
 
 interface QuestionsRateFilterProps {
   isActive: (rate: Rate) => boolean;
@@ -14,9 +15,9 @@ const QuestionsRateFilter = memo(
         <p>Рейтинг вопроса</p>
         <div className={styles.rate}>
           {rates.map(rate => (
-            <RateTab
+            <FilterChip
               key={rate}
-              rate={rate}
+              label={rate}
               onClick={() => handleClick(rate)}
               isActive={isActive(rate)}
             />

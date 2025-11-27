@@ -1,6 +1,7 @@
-import { complexities, ComplexityTab, type Complexity } from "@/entities/question";
+import { complexities, type Complexity } from "@/entities/question";
 import styles from "./styles.module.css";
 import { memo } from "react";
+import { FilterChip } from "@/shared/ui";
 
 interface QuestionsComplexityFilterProps {
   isActive: (complexity: Complexity) => boolean;
@@ -14,9 +15,9 @@ const QuestionsComplexityFilter = memo(
         <p>Сложность вопроса</p>
         <div role="tablist" className={styles.complexity}>
           {complexities.map(c => (
-            <ComplexityTab
+            <FilterChip
               key={c}
-              complexity={c}
+              label={`${c.split(",")[0]}-${c.split(",").slice(-1)}`}
               onClick={() => handleClick(c)}
               isActive={isActive(c)}
             />

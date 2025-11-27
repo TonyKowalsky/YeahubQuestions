@@ -1,1 +1,1 @@
-export { isSkill, imageSrcGenerator } from "./helpers";
+export { isSkill } from "./helpers";

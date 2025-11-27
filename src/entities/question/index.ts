@@ -1,4 +1,4 @@
-export { QuestionTab, QuestionAnswer, ComplexityTab, RateTab } from "./ui";
+export { QuestionTab, QuestionAnswer } from "./ui";
 export * as QuestionsAPI from "./api";
 export type {
   Question,

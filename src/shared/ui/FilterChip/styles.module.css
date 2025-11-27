@@ -1,4 +1,4 @@
-.skill {
+.chip {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@
   height: 42px;
 }
 
-.skill:hover {
+.chip:hover {
   background-color: var(--color-purple);
   border-color: var(--color-purple);
   cursor: pointer;

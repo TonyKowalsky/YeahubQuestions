@@ -1,7 +1,8 @@
-import { SkillTab, type Skill } from "@/entities/skill";
+import { type Skill } from "@/entities/skill";
 import styles from "./styles.module.css";
 import { useToggle } from "@/shared/lib";
 import { memo } from "react";
+import { FilterChip } from "@/shared/ui";
 
 const VISIBLE_SKILLS_COUNT = 4;
 
@@ -23,9 +24,10 @@ const QuestionsSkillsFilter = memo(
         <p>Выберите навыки</p>
         <div className={styles.skills}>
           {displayedSkills.map(skill => (
-            <SkillTab
+            <FilterChip
               key={skill.id}
-              skill={skill}
+              label={skill.title}
+              image={skill.title}
               onClick={() => handleClick(skill)}
               isActive={isActive(skill)}
             />
