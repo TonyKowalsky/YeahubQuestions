@@ -1,17 +1,16 @@
 import styles from "./styles.module.css";
 import { useAccordion, useMobileView } from "@/shared/lib";
-import { DropDownItem } from "@/entities/navigation/ui";
-import { NavigationItem } from "@/entities/navigation/ui";
-import { navTabs as tabs } from "@/entities/navigation/model";
+import { navTabs as tabs } from "@/widgets/sidebar/model";
 import { memo, useMemo } from "react";
+import { SidebarItem, SidebarDropDownItem } from "@/widgets/sidebar/ui";
 
-const MainNavigation = memo(() => {
+const SidebarItemsList = memo(() => {
   const [openAccordion, toggleAccordion] = useAccordion();
   const isMobileView = useMobileView();
   const displayedTabs = useMemo(
     () =>
       tabs.filter(
-        tab => !tab.isMobileView || (tab.isMobileView === isMobileView)
+        tab => !tab.isMobileView || tab.isMobileView === isMobileView
       ),
     [isMobileView]
   );
@@ -22,13 +21,13 @@ const MainNavigation = memo(() => {
         {displayedTabs.map(tab => (
           <li key={tab.label}>
             {tab.dropDown ? (
-              <DropDownItem
+              <SidebarDropDownItem
                 item={tab}
                 onClick={toggleAccordion}
                 openedTabs={openAccordion}
               />
             ) : (
-              <NavigationItem item={tab} />
+              <SidebarItem item={tab} />
             )}
           </li>
         ))}
@@ -37,4 +36,4 @@ const MainNavigation = memo(() => {
   );
 });
 
-export default MainNavigation;
+export default SidebarItemsList;

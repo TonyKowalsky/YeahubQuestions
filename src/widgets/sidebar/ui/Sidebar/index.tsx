@@ -3,11 +3,11 @@ import { logoIconRounded } from "@/shared/assets";
 import sidebarArrowRight from "./sidebar-arrow-right.png";
 import sidebarArrowLeft from "./sidebar-arrow-left.png";
 import YeahubLogo from "./Yeahub.png";
-import { MainNavigation } from "@/entities/navigation";
 import { useNavigate } from "react-router-dom";
 import { SupportButton } from "@/features/support-navigation";
 import { forwardRef, useCallback } from "react";
 import { useSidebar } from "@/shared/model";
+import {SidebarItemsList} from "@/widgets/sidebar/ui";
 
 const SUPPORT_LINK = "https://t.me/yeahub_support";
 
@@ -45,7 +45,7 @@ const Sidebar = forwardRef<HTMLElement>((_, ref) => {
           )}
         </button>
       </header>
-      <MainNavigation />
+      <SidebarItemsList />
       <div className={styles.support}>
         <SupportButton link={SUPPORT_LINK} />
       </div>

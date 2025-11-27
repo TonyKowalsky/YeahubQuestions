@@ -1,18 +1,18 @@
 import styles from "./styles.module.css";
 import { NavLink } from "react-router-dom";
 import { Tooltip } from "@/shared/ui";
-import type { navTab } from "@/entities/navigation/model";
+import type { navTab } from "@/widgets/sidebar/model";
 import { cn } from "@/shared/utils";
 import { memo, useCallback } from "react";
 import { useSidebar } from "@/shared/model";
 import type { MouseEvent } from "react";
 import { useMobileView } from "@/shared/lib";
 
-interface NavigationItemProps {
+interface SidebarItemProps {
   item: navTab;
 }
 
-const NavigationItem = memo(({ item }: NavigationItemProps) => {
+const SidebarItem = memo(({ item }: SidebarItemProps) => {
   const { isOpenSidebar, toggleSidebar } = useSidebar();
   const isMobileView = useMobileView();
   const handleClick = useCallback(
@@ -42,4 +42,4 @@ const NavigationItem = memo(({ item }: NavigationItemProps) => {
   );
 });
 
-export default NavigationItem;
+export default SidebarItem;

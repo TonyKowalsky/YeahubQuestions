@@ -1,20 +1,20 @@
 import styles from "./styles.module.css";
 import { Tooltip } from "@/shared/ui";
 import { arrowDownIcon } from "@/shared/assets";
-import { NavigationItem } from "@/entities/navigation/ui";
-import type { navTab } from "@/entities/navigation/model";
+import type { navTab } from "@/widgets/sidebar/model";
 import { cn } from "@/shared/utils";
 import { useSidebar } from "@/shared/model";
 import { memo } from "react";
+import { SidebarItem } from "@/widgets/sidebar/ui";
 
-interface DropDownItemProps {
+interface SidebarDropDownItemProps {
   item: navTab;
   onClick: (label: string) => void;
   openedTabs: string[];
 }
 
-const DropDownItem = memo(
-  ({ item, onClick, openedTabs }: DropDownItemProps) => {
+const SidebarDropDownItem = memo(
+  ({ item, onClick, openedTabs }: SidebarDropDownItemProps) => {
     const expanded = openedTabs.includes(item.label);
     const { isOpenSidebar } = useSidebar();
 
@@ -48,7 +48,7 @@ const DropDownItem = memo(
           <ul className={styles.list}>
             {item.dropDown?.map(item => (
               <li key={item.label} className={styles.dropdownItem}>
-                <NavigationItem item={item} />
+                <SidebarItem item={item} />
               </li>
             ))}
           </ul>
@@ -58,4 +58,4 @@ const DropDownItem = memo(
   }
 );
 
-export default DropDownItem;
+export default SidebarDropDownItem;
