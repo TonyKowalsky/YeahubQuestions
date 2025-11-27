@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { memo, useRef } from "react";
 import styles from "./styles.module.css";
 import type { Question } from "@/entities/question/model";
 import { useProcessedAnswer } from "@/entities/question/lib";
@@ -8,7 +8,7 @@ interface QuestionAnswerProps {
   type: "short" | "long";
 }
 
-const QuestionAnswer = ({ question, type }: QuestionAnswerProps) => {
+const QuestionAnswer = memo(({ question, type }: QuestionAnswerProps) => {
   const answerRef = useRef<HTMLDivElement>(null);
   const processedHtml = useProcessedAnswer(question, type, answerRef);
 
@@ -19,6 +19,6 @@ const QuestionAnswer = ({ question, type }: QuestionAnswerProps) => {
       dangerouslySetInnerHTML={{ __html: processedHtml }}
     />
   );
-};
+});
 
 export default QuestionAnswer;
