@@ -1,1 +1,0 @@
-export { SupportButton } from "./ui";

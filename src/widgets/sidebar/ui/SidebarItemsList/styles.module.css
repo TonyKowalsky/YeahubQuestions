@@ -2,12 +2,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   height: calc(100vh - 180px);
 }
 
-.nav,
-.support {
+.nav {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,4 +17,19 @@
 
 .nav {
   flex: 1;
+}
+
+.support {
+  display: flex;
+  flex-direction: column;
+  height: 44px;
+  align-items: center;
+  padding: 36px 20px 20px;
+  gap: 5px;
+}
+
+@media (max-height: 500px) {
+  .support {
+    display: none;
+  }
 }

@@ -4,11 +4,11 @@ import { useSidebar } from "@/shared/model";
 import { cn } from "@/shared/utils";
 import { memo } from "react";
 
-interface SupportButtonProps {
+interface SidebarSupportButtonProps {
   link: string;
 }
 
-const SupportButton = memo(({ link }: SupportButtonProps) => {
+const SidebarSupportButton = memo(({ link }: SidebarSupportButtonProps) => {
   const { isOpenSidebar } = useSidebar();
   return (
     <a
@@ -30,4 +30,4 @@ const SupportButton = memo(({ link }: SupportButtonProps) => {
   );
 });
 
-export default SupportButton;
+export default SidebarSupportButton;
