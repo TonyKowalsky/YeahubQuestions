@@ -2,8 +2,8 @@ import styles from "./styles.module.css";
 import { useRef } from "react";
 import { useClickOutside, useToggle } from "@/shared/lib";
 import type { Question } from "@/entities/question/model";
-import { QuestionPopover } from "@/entities/question/ui";
-import { RatingBadge } from "@/shared/ui";
+import { QuestionMenu } from "@/entities/question/ui";
+import { Popover, RatingBadge } from "@/shared/ui";
 
 interface QuestionInfoBarProps {
   question: Question;
@@ -36,7 +36,12 @@ const QuestionInfoBar = ({ question }: QuestionInfoBarProps) => {
           ⋮
         </button>
         {isOpenPopover && (
-          <QuestionPopover question={question} ref={popoverRef} />
+          <Popover
+            ref={popoverRef}
+            children={<QuestionMenu question={question} />}
+            right={5}
+            top={40}
+          />
         )}
       </div>
     </div>

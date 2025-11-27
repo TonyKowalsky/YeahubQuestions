@@ -3,9 +3,10 @@ import burgerIcon from "./burger.png";
 import { logoIconRounded } from "@/shared/assets";
 import { memo, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserPopover, UserButton, user } from "@/entities/user";
+import { UserButton, user, UserMenu } from "@/entities/user";
 import { useClickOutside, useToggle } from "@/shared/lib";
 import { useSidebar } from "@/shared/model";
+import { Popover } from "@/shared/ui";
 
 const Header = memo(() => {
   const [isOpenPopover, toggle, , close] = useToggle(false);
@@ -31,7 +32,14 @@ const Header = memo(() => {
       </button>
       <div>
         <UserButton ref={buttonRef} user={user} onClick={toggle} />
-        {isOpenPopover && <UserPopover ref={popoverRef} user={user} />}
+        {isOpenPopover && (
+          <Popover
+            ref={popoverRef}
+            children={<UserMenu user={user} />}
+            top={80}
+            left={"calc(100vw - 300px)"}
+          />
+        )}
       </div>
       <button type="button" onClick={toggleSidebar} className={styles.burger}>
         <img alt="sidebar menu" src={burgerIcon} />

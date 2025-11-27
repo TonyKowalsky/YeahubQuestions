@@ -5,3 +5,4 @@ export { default as Pagination } from "./Pagination";
 export { default as RatingBadge } from "./RatingBadge";
 export { default as ErrorMessage } from "./ErrorMessage";
 export {default as FilterChip} from "./FilterChip";
+export {default as Popover} from "./Popover";
